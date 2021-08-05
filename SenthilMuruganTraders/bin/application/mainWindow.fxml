@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="904.0" prefWidth="1676.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+    <left>
+        <AnchorPane prefHeight="904.0" prefWidth="244.0" style="-fx-background-color: #3b3849;" BorderPane.alignment="CENTER">
+            <children>
+                  <ImageView fx:id="brandImageView" fitHeight="177.0" fitWidth="150.0" layoutX="48.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../image/BrandLogo1.png" />
+                    </image>
+                </ImageView> 
+                <Label alignment="CENTER" layoutX="19.0" layoutY="163.0" prefHeight="37.0" prefWidth="234.0" text="Senthur Murugan" textFill="#fcf2f2">
+                    <font>
+                        <Font name="Fira Sans Compressed Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="34.0" layoutY="208.0" prefHeight="37.0" prefWidth="201.0" text="Traders" textFill="#fcf2f2">
+                    <font>
+                        <Font name="Fira Sans Compressed Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Button fx:id="salesBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="384.0" mnemonicParsing="false" onAction="#salesSwitchBtnOnAction" prefHeight="43.0" prefWidth="244.0" style="-fx-background-color: #3b3849;" text="Sales" textFill="#fffafa">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+               <graphic>
+                  <ImageView fx:id="salesIcon" fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../image/salesIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+                </Button>
+                <Button fx:id="todayProductionBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="-2.0" layoutY="437.0" mnemonicParsing="false" onAction="#todayProductionOnAction" prefHeight="43.0" prefWidth="245.0" style="-fx-background-color: #3b3849;" text="Today production" textFill="#fffafa">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+               <graphic>
+                  <ImageView fx:id="todayProductionIcon" fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../image/TodayProductionIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="13.0" />
+               </padding>
+                </Button>
+                <Button fx:id="productReportSwitchBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="2.0" layoutY="331.0" mnemonicParsing="false" onAction="#productReportSwitchBtnOnAction" prefHeight="43.0" prefWidth="270.0" style="-fx-background-color: #3b3849;" text="Product Management" textFill="#fffafa">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+               <graphic>
+                  <ImageView fx:id="productReportIcon" fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../image/ProductReportIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+                </Button>
+            <Button fx:id="invoiceReportBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="2.0" layoutY="492.0" mnemonicParsing="false" onAction="#invoiceReportBtnOnAction" prefHeight="43.0" prefWidth="242.0" style="-fx-background-color: #3b3849;" text="Invoice reports" textFill="#fffafa">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="invoiceReportIcon" fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../image/InvoiceReportIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="9.0" />
+               </padding>
+            </Button>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+    </center>
+</BorderPane>

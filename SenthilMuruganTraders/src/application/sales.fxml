@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" prefHeight="904.0" prefWidth="1285.0" style="-fx-background-color: #282432;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SalesController">
+   <children>
+      <Label layoutX="49.0" layoutY="29.0" text="Sales" textFill="#fcf7f7">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-7.0" layoutY="82.0" prefHeight="790.0" prefWidth="1285.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="82.0">
+         <children>
+            <Label layoutX="14.0" layoutY="33.0" prefHeight="20.0" prefWidth="151.0" text="Product Name : " textFill="#fcf8f8" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="887.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="453.0" layoutY="33.0" text="Quantity :" textFill="#fcf8f8" AnchorPane.rightAnchor="737.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="addBtn" layoutX="900.0" layoutY="25.0" mnemonicParsing="false" onAction="#addOnAction" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #E94D71;" text="Add" textFill="#f5f3f3" AnchorPane.rightAnchor="242.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tableView" layoutX="12.0" layoutY="84.0" maxWidth="1076.0" opacity="0.81" prefHeight="479.0" prefWidth="1031.0" style="-fx-background-color: #3a3843;" AnchorPane.bottomAnchor="227.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="242.0" AnchorPane.topAnchor="84.0">
+              <columns>
+                <TableColumn fx:id="productIDCol" minWidth="0.0" prefWidth="90.0" text="Product ID" />
+                <TableColumn fx:id="productNameCol" minWidth="50.0" prefWidth="181.0" text="Description" />
+                  <TableColumn fx:id="productPriceCol" minWidth="5.0" prefWidth="152.0" text="Price" />
+                  <TableColumn fx:id="qtyCol" minWidth="5.0" prefWidth="121.0" text="Quantity" />
+                  <TableColumn fx:id="gstCol" maxWidth="286.0" minWidth="0.0" prefWidth="213.0" text="GST">
+                     <columns>
+                        <TableColumn fx:id="gstPercentageCol" minWidth="0.0" prefWidth="111.0" text="\%" />
+                        <TableColumn fx:id="gstAmountCol" minWidth="0.0" prefWidth="155.0" text="Amount" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="amountCol" minWidth="40.0" prefWidth="225.0" text="Amount (without GST)" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="726.0" layoutY="584.0" prefHeight="21.0" prefWidth="107.0" text="Sub Total :" textFill="#fcf8f8" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="452.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="removeBtn" layoutX="318.0" layoutY="575.0" mnemonicParsing="false" onAction="#removeBtnOnAction" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #E94D71;" text="Remove" textFill="#f5f3f3" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="824.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="resetBtn" layoutX="165.0" layoutY="575.0" mnemonicParsing="false" onAction="#resetBtnOnAction" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #5746a6;" text="Reset" textFill="#f5f3f3" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="977.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="savebtn" layoutX="12.0" layoutY="575.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #57d6c0;" text="Save" textFill="#f5f3f3" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="1130.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="productNameTxt" layoutX="178.0" layoutY="24.0" maxWidth="325.0" prefHeight="39.0" prefWidth="263.0" promptText="Enter product name" style="-fx-background-color: #656567; -fx-text-inner-color: #fff; -fx-text-box-border: #E94D71; -fx-focus-color: #E94D71;" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="840.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qtyTxt" layoutX="569.0" layoutY="25.0" prefHeight="39.0" prefWidth="273.0" promptText="No of items" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.rightAnchor="439.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <AnchorPane layoutX="15.0" layoutY="625.0" prefHeight="151.0" prefWidth="528.0" style="-fx-background-color: #3a3843; -fx-background-radius: 20; -fx-border-radius: 20;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0">
+               <children>
+                  <Label fx:id="gst5Label" layoutX="14.0" layoutY="20.0" prefHeight="18.0" prefWidth="156.0" text="GST % :" textFill="#f2eded" AnchorPane.rightAnchor="358.0" />
+                  <Label fx:id="sgst5Label" layoutX="14.0" layoutY="52.0" prefHeight="18.0" prefWidth="162.0" text="SGST % :" textFill="#f2eded" AnchorPane.rightAnchor="352.0" />
+                  <Label fx:id="igst5Label" layoutX="14.0" layoutY="82.0" prefHeight="18.0" prefWidth="162.0" text="IGST % :" textFill="#f2eded" AnchorPane.rightAnchor="352.0" />
+                  <Label fx:id="cgst5Label" layoutX="14.0" layoutY="112.0" prefHeight="18.0" prefWidth="162.0" text="CGST % :" textFill="#f2eded" AnchorPane.rightAnchor="352.0" />
+                  <Label fx:id="gst18Label" layoutX="181.0" layoutY="20.0" prefHeight="18.0" prefWidth="156.0" text="GST % :    " textFill="#f2eded" AnchorPane.rightAnchor="191.0" />
+                  <Label fx:id="sgst18Label" layoutX="181.0" layoutY="52.0" prefHeight="18.0" prefWidth="156.0" text="SGST :" textFill="#f2eded" AnchorPane.rightAnchor="191.0" />
+                  <Label fx:id="igst18Label" layoutX="182.0" layoutY="82.0" prefHeight="18.0" prefWidth="156.0" text="IGST : " textFill="#f2eded" AnchorPane.rightAnchor="190.0" />
+                  <Label fx:id="cgst18Label" layoutX="181.0" layoutY="112.0" prefHeight="18.0" prefWidth="156.0" text="CGST : " textFill="#f2eded" AnchorPane.rightAnchor="191.0" />
+                  <Label fx:id="gst28Label" layoutX="343.0" layoutY="20.0" prefHeight="18.0" prefWidth="181.0" text="GST  :" textFill="#f2eded" AnchorPane.rightAnchor="4.0" />
+                  <Label fx:id="sgst28Label" layoutX="343.0" layoutY="52.0" prefHeight="18.0" prefWidth="181.0" text="SGST :" textFill="#f2eded" AnchorPane.rightAnchor="4.0" />
+                  <Label fx:id="igst28Label" layoutX="343.0" layoutY="82.0" prefHeight="18.0" prefWidth="181.0" text="IGST : " textFill="#f2eded" AnchorPane.rightAnchor="4.0" />
+                  <Label fx:id="cgst28Label" layoutX="343.0" layoutY="112.0" prefHeight="18.0" prefWidth="181.0" text="CGST : " textFill="#f2eded" AnchorPane.rightAnchor="4.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="555.0" layoutY="625.0" prefHeight="151.0" prefWidth="481.0" style="-fx-background-color: #3a3843; -fx-background-radius: 20; -fx-border-radius: 20;" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="236.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="20.0" prefHeight="26.0" prefWidth="190.0" text="Total GST Amount" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="56.0" prefHeight="26.0" prefWidth="194.0" text="Total Amount" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="94.0" prefHeight="26.0" prefWidth="181.0" text="Roundoff" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalGstAmtLbl" layoutX="255.0" layoutY="20.0" prefHeight="26.0" prefWidth="239.0" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalAmountLbl" layoutX="255.0" layoutY="56.0" prefHeight="26.0" prefWidth="239.0" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="roundOffLbl" layoutX="255.0" layoutY="94.0" prefHeight="26.0" prefWidth="239.0" textFill="#f5eded">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="submitBtn" layoutX="470.0" layoutY="575.0" mnemonicParsing="false" onAction="#submitOnAction" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #E94D71;" text="Submit" textFill="#f5f3f3" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="672.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="subTotalLbl" layoutX="833.0" layoutY="584.0" prefHeight="21.0" prefWidth="212.0" textFill="#fcf8f8" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="240.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="1049.0" layoutY="24.0" prefHeight="753.0" prefWidth="224.0" style="-fx-background-color: #282432;" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="24.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="3.0" prefHeight="36.0" prefWidth="50.0" text="Date : " textFill="#fa5f7e" AnchorPane.rightAnchor="136.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="6.0" layoutY="143.0" prefHeight="333.0" prefWidth="217.0" style="-fx-background-color: #3a3843; -fx-background-radius: 20; -fx-border-radius: 20;" AnchorPane.bottomAnchor="277.0" AnchorPane.rightAnchor="6.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="33.0" text="Customer Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="customerNameTxt" layoutX="9.0" layoutY="74.0" prefHeight="39.0" prefWidth="200.0" promptText="Enter Customer Name" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="customerNumberTxt" layoutX="9.0" layoutY="124.0" prefHeight="39.0" prefWidth="200.0" promptText="Phone Number" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextArea fx:id="customerAddressTxt" layoutX="9.0" layoutY="175.0" prefHeight="128.0" prefWidth="200.0" promptText="Address">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="6.0" layoutY="602.0" prefHeight="151.0" prefWidth="212.0" style="-fx-background-color: #3a3843; -fx-background-radius: 20; -fx-border-radius: 20;" AnchorPane.bottomAnchor="0.0">
+                     <children>
+                        <Label layoutX="4.0" layoutY="90.0" text="Balance : " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="balanceCalcTxt" layoutX="4.0" layoutY="42.0" prefHeight="39.0" prefWidth="205.0" promptText="Given Amount" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="balanceAmtLabel" layoutX="86.0" layoutY="90.0" prefHeight="20.0" prefWidth="128.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="dateLabel" layoutX="90.0" layoutY="3.0" prefHeight="36.0" prefWidth="128.0" text="29/01/2021" textFill="#fa5f7e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="521.0" prefHeight="16.0" prefWidth="101.0" text="Total items : " textFill="WHITE" AnchorPane.bottomAnchor="216.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalItemsLabel" layoutX="102.0" layoutY="522.0" prefHeight="16.0" prefWidth="121.0" text="0" textFill="WHITE" AnchorPane.bottomAnchor="215.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="814.0" layoutY="14.0" prefHeight="65.0" prefWidth="239.0" style="-fx-background-color: #3a3843; -fx-background-radius: 30; -fx-border-radius: 30;" AnchorPane.rightAnchor="232.0">
+         <children>
+            <Label layoutX="14.0" layoutY="24.0" prefHeight="18.0" prefWidth="107.0" text="Invoice No : " textFill="#26bfbc">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="invoiceNoLbl" layoutX="118.0" layoutY="24.0" prefHeight="18.0" prefWidth="115.0" textFill="#26bfbc" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="656.0" layoutY="882.0" prefHeight="16.0" prefWidth="280.0" text="veera cilamban PH: 8072801272" textFill="WHITE" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="8.0" />
+   </children>
+</AnchorPane>

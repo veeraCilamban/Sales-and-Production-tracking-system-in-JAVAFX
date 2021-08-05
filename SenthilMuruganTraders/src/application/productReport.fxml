@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainProductAnchorPane" prefHeight="904.0" prefWidth="1192.0" style="-fx-background-color: #282432;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProductDetailController">
+   <children>
+      <AnchorPane prefHeight="80.0" prefWidth="1192.0" style="-fx-background-color: #3b3849;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="31.0" layoutY="11.0" prefHeight="45.0" prefWidth="295.0" text="Product Report" textFill="#ebe9eb">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchTxt" layoutX="787.0" layoutY="16.0" prefHeight="34.0" prefWidth="288.0" promptText="Search by ID / Name" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.rightAnchor="117.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="searchBtn" layoutX="1087.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchBtnOnAction" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #5debdf;" text="Search" textFill="#fff7f7" AnchorPane.rightAnchor="14.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="942.0" layoutY="86.0" prefHeight="790.0" prefWidth="424.0" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="86.0">
+         <children>
+            <AnchorPane prefHeight="144.0" prefWidth="438.0" style="-fx-background-color: #3a3843; -fx-background-radius: 5; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Product Details" textFill="#cd3f2f">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="53.0" text="Products : " textFill="#fcf8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productCountLabel" layoutX="133.0" layoutY="53.0" prefHeight="16.0" prefWidth="295.0" text="0" textFill="#cd3f2f">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="80.0" text="Total Stocks : " textFill="#fcf8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalStocksLabel" layoutX="133.0" layoutY="80.0" prefHeight="16.0" prefWidth="295.0" text="0" textFill="#cd3f2f">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="304.0" prefWidth="438.0" style="-fx-background-color: #3a3843; -fx-background-radius: 5; -fx-border-radius: 5;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Add Product" textFill="#fcf6f6">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productNameTxt" layoutX="14.0" layoutY="52.0" prefHeight="43.0" prefWidth="467.0" promptText="Product Name" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="25.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="priceTxt" layoutX="14.0" layoutY="98.0" prefHeight="43.0" prefWidth="467.0" promptText="Price" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="25.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="addBtn" layoutX="14.0" layoutY="237.0" mnemonicParsing="false" onAction="#addBtnOAction" prefHeight="45.0" prefWidth="467.0" style="-fx-background-color: #5eca72;" text="Add" textFill="#f2eeee" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="25.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="gstTxt" layoutX="14.0" layoutY="145.0" prefHeight="43.0" prefWidth="467.0" promptText="GST %" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="25.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="321.0" prefWidth="424.0" style="-fx-background-color: #3a3843; -fx-background-radius: 5; -fx-border-radius: 5;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Update Form" textFill="#cd3f2f">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="updateProductNameTxt" layoutX="21.0" layoutY="54.0" prefHeight="45.0" prefWidth="467.0" promptText="Product Name" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="updatePriceTxt" layoutX="21.0" layoutY="103.0" prefHeight="45.0" prefWidth="467.0" promptText="Price" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="updateStocksTxt" layoutX="21.0" layoutY="256.0" prefHeight="45.0" prefWidth="185.0" promptText="Stocks" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="218.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="showBtn" layoutX="21.0" layoutY="201.0" mnemonicParsing="false" onAction="#showBtnOnAction" prefHeight="45.0" prefWidth="185.0" style="-fx-background-color: #946af1;" text="Show " textFill="#f2eeee" AnchorPane.rightAnchor="218.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="updateGSTTxt" layoutX="20.0" layoutY="152.0" prefHeight="45.0" prefWidth="467.0" promptText="GST %" style="-fx-background-color: #656567; -fx-text-inner-color: #fff;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="updateBtn1" layoutX="221.0" layoutY="201.0" mnemonicParsing="false" onAction="#updateBtnOnAction" prefHeight="45.0" prefWidth="185.0" style="-fx-background-color: #057be5;" text="Update" textFill="#f2eeee" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updateStocks" layoutX="221.0" layoutY="256.0" mnemonicParsing="false" onAction="#updateStockBtnOnAction" prefHeight="45.0" prefWidth="185.0" style="-fx-background-color: #057be5;" text="Update Stocks" textFill="#f2eeee" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="7.0" layoutY="86.0" prefHeight="790.0" prefWidth="737.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="448.0" AnchorPane.topAnchor="86.0">
+         <children>
+            <TableView fx:id="productTableView" prefHeight="741.0" prefWidth="727.0" stylesheets="@table.css" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="productIDCol" prefWidth="96.0" text="Product ID" />
+                <TableColumn fx:id="productNameCol" prefWidth="249.0" text="Product Name" />
+                  <TableColumn fx:id="priceCol" prefWidth="144.0" text="Price" />
+                  <TableColumn fx:id="gstCol" minWidth="5.0" prefWidth="78.0" text="GST %" />
+                  <TableColumn fx:id="stocksCol" prefWidth="61.0" text="Stocks" />
+                  <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="0.0" text="Date(Added)" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox prefHeight="43.0" prefWidth="737.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="showAllBtn" alignment="CENTER" mnemonicParsing="false" onAction="#showAllBtnOnAction" prefHeight="34.0" prefWidth="133.0" style="-fx-background-color: #5eca72;" text="Show All" textFill="#f8f6f6" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteBtn" alignment="CENTER" mnemonicParsing="false" onAction="#deleteBtnOnAction" prefHeight="34.0" prefWidth="133.0" style="-fx-background-color: #c43833;" text="Delete" textFill="#f8f6f6" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="558.0" layoutY="883.0" prefHeight="16.0" prefWidth="261.0" text="veera cilamban PH: 8072801272" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="2.0" />
+   </children>
+</AnchorPane>
