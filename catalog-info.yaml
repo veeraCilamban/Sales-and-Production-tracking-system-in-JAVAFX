@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Sales-and-Production-tracking-system-in-JAVAFX
+  annotations:
+    github.com/project-slug: veeraCilamban/Sales-and-Production-tracking-system-in-JAVAFX
+spec:
+  type: other
+  lifecycle: unknown
+  owner: veeraCilamban
